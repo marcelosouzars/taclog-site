@@ -105,21 +105,39 @@
   .hero-fact .num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;color:#fff;display:block}
   .hero-fact .lbl{font-size:12.5px;color:var(--onDark-muted)}
 
-  /* signature: animated route */
-  .route-box{position:relative;height:420px}
-  .route-box svg{width:100%;height:100%}
-  .route-path{fill:none;stroke:var(--line-dark);stroke-width:2}
-  .route-path-accent{
-    fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linecap:round;
-    stroke-dasharray:6 10;animation:dash 26s linear infinite;
+  /* signature: video player mockup */
+  .video-box{
+    position:relative;border-radius:16px;overflow:hidden;
+    background:var(--panel);border:1px solid var(--line-dark);
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
   }
-  @keyframes dash{to{stroke-dashoffset:-640}}
-  .route-dot{fill:var(--headlight)}
-  .route-node{fill:var(--panel);stroke:var(--line-dark);stroke-width:1.5}
-  .route-label{font-family:'JetBrains Mono',monospace;font-size:11px;fill:var(--onDark-muted)}
-  .route-city{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;fill:#fff}
-  #moving-dot{offset-path:path('M60,340 C160,340 150,150 260,150 S 420,60 520,90');offset-rotate:0deg;animation:travel 7s ease-in-out infinite}
-  @keyframes travel{0%{offset-distance:0%}50%{offset-distance:100%}100%{offset-distance:0%}}
+  .promo-video{width:100%;aspect-ratio:3/2;object-fit:cover;display:block;background:#000}
+  .video-play-btn{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:72px;height:72px;border-radius:50%;border:none;cursor:pointer;
+    background:var(--accent);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 0 14px rgba(255,107,53,0.14);
+    transition:transform .2s ease,background .2s ease;
+  }
+  .video-play-btn:hover{transform:translate(-50%,-50%) scale(1.06);background:#ff7f4d}
+  .video-play-btn svg{margin-left:4px}
+  .video-play-btn.hidden{display:none}
+  .video-controls{
+    position:absolute;left:0;right:0;bottom:0;
+    display:flex;align-items:center;gap:12px;
+    padding:12px 14px;
+    background:linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+    opacity:0;transition:opacity .2s ease;
+  }
+  .video-box:hover .video-controls,.video-box.playing .video-controls{opacity:1}
+  .vc-btn{
+    width:30px;height:30px;border-radius:50%;border:none;cursor:pointer;
+    background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;transition:background .2s ease;
+  }
+  .vc-btn:hover{background:rgba(255,255,255,0.26)}
+  .vc-label{flex:1;font-size:11px;color:rgba(255,255,255,0.75)}
+  .video-caption{text-align:center;font-size:11px;color:var(--onDark-muted);padding:10px 0 0}
 
   /* ---------- MARQUEE STRIP ---------- */
   .strip{
@@ -263,18 +281,28 @@
       </div>
     </div>
 
-    <div class="route-box" aria-hidden="true">
-      <svg viewBox="0 0 560 420">
-        <path class="route-path" d="M60,340 C160,340 150,150 260,150 S 420,60 520,90"/>
-        <path class="route-path-accent" d="M60,340 C160,340 150,150 260,150 S 420,60 520,90"/>
-        <circle class="route-node" cx="60" cy="340" r="7"/>
-        <circle class="route-node" cx="520" cy="90" r="7"/>
-        <text class="route-city" x="34" y="368">Coleta</text>
-        <text class="route-label" x="30" y="384">-29.68, -53.80</text>
-        <text class="route-city" x="486" y="72">Entrega</text>
-        <text class="route-label" x="470" y="56">BR-116 · 612km</text>
-        <circle id="moving-dot" class="route-dot" r="6"/>
-      </svg>
+    <div class="video-box">
+      <video id="promoVideo" class="promo-video" poster="video/poster.jpg" playsinline muted preload="metadata">
+        <source src="video/taclog_promo_web.mp4" type="video/mp4">
+      </video>
+
+      <button id="playToggle" class="video-play-btn" aria-label="Assistir vídeo">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path fill="#1a0800" d="M8 5v14l11-7z"/></svg>
+      </button>
+
+      <div class="video-controls">
+        <button id="playPauseBtn" class="vc-btn" aria-label="Pausar/Play">
+          <svg id="iconPause" viewBox="0 0 24 24" width="16" height="16"><path fill="#fff" d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+          <svg id="iconPlay" viewBox="0 0 24 24" width="16" height="16" style="display:none"><path fill="#fff" d="M8 5v14l11-7z"/></svg>
+        </button>
+        <span class="vc-label mono">TACLOG · Apresentação</span>
+        <button id="muteBtn" class="vc-btn" aria-label="Ativar/desativar som">
+          <svg id="iconMuted" viewBox="0 0 24 24" width="16" height="16"><path fill="#fff" d="M16.5 12A4.5 4.5 0 0014 7.97v2.21l2.45 2.45c.03-.2.05-.42.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51A8.796 8.796 0 0021 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06a8.99 8.99 0 003.69-1.81L18.73 21 20 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/></svg>
+          <svg id="iconSound" viewBox="0 0 24 24" width="16" height="16" style="display:none"><path fill="#fff" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0014 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        </button>
+      </div>
+
+      <p class="video-caption mono">TACLOG · Apresentação da plataforma · 1min21s</p>
     </div>
   </div>
 </section>
@@ -488,6 +516,54 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // --- Player do vídeo de apresentação ---
+  const promoVideo = document.getElementById('promoVideo');
+  const videoBox = document.querySelector('.video-box');
+  const playToggle = document.getElementById('playToggle');
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  const muteBtn = document.getElementById('muteBtn');
+  const iconPlay = document.getElementById('iconPlay');
+  const iconPause = document.getElementById('iconPause');
+  const iconMuted = document.getElementById('iconMuted');
+  const iconSound = document.getElementById('iconSound');
+
+  function iniciarVideo() {
+    promoVideo.muted = false; // toca com som já na primeira vez que a pessoa clica em play
+    promoVideo.play();
+    playToggle.classList.add('hidden');
+    videoBox.classList.add('playing');
+    atualizarIconesSom();
+  }
+
+  function atualizarIconesSom() {
+    iconMuted.style.display = promoVideo.muted ? 'block' : 'none';
+    iconSound.style.display = promoVideo.muted ? 'none' : 'block';
+  }
+
+  playToggle.addEventListener('click', iniciarVideo);
+
+  playPauseBtn.addEventListener('click', () => {
+    if (promoVideo.paused) {
+      promoVideo.play();
+      iconPlay.style.display = 'none';
+      iconPause.style.display = 'block';
+    } else {
+      promoVideo.pause();
+      iconPlay.style.display = 'block';
+      iconPause.style.display = 'none';
+    }
+  });
+
+  muteBtn.addEventListener('click', () => {
+    promoVideo.muted = !promoVideo.muted;
+    atualizarIconesSom();
+  });
+
+  promoVideo.addEventListener('ended', () => {
+    playToggle.classList.remove('hidden');
+    videoBox.classList.remove('playing');
+  });
 
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
