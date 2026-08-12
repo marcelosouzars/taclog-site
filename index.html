@@ -414,13 +414,13 @@
     <div>
       <form id="contactForm">
         <!-- Troque SEU_ACCESS_KEY_AQUI pela chave gratuita gerada em web3forms.com -->
-        <input type="hidden" name="access_key" value="SEU_ACCESS_KEY_AQUI">
+        <input type="hidden" name="access_key" value="3496d842-05c7-4611-a8dc-9e4a2049cdba">
         <input type="hidden" name="subject" value="Novo contato pelo site TACLOG">
         <input type="checkbox" name="botcheck" style="display:none">
 
         <div class="row-2">
           <div class="field">
-            <label for="nome">Nome</label>
+            <label for="nome">Nome *</label>
             <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
           </div>
           <div class="field">
@@ -430,12 +430,12 @@
         </div>
         <div class="row-2">
           <div class="field">
-            <label for="email">E-mail</label>
+            <label for="email">E-mail *</label>
             <input type="email" id="email" name="email" placeholder="voce@empresa.com" required>
           </div>
           <div class="field">
-            <label for="telefone">Telefone / WhatsApp</label>
-            <input type="tel" id="telefone" name="telefone" placeholder="(51) 90000-0000">
+            <label for="telefone">Telefone / WhatsApp *</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(51) 90000-0000" required>
           </div>
         </div>
         <div class="field">
@@ -448,7 +448,7 @@
           </select>
         </div>
         <div class="field">
-          <label for="mensagem">Mensagem</label>
+          <label for="mensagem">Mensagem *</label>
           <textarea id="mensagem" name="mensagem" placeholder="Como podemos ajudar?" required></textarea>
         </div>
         <button type="submit" class="submit-btn">Enviar mensagem</button>
