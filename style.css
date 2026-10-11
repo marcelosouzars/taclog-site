@@ -153,6 +153,23 @@ details[open] .acc__ico::after{transform:rotate(0)}
 .cycle__row .is-back{box-shadow:inset 0 3px 0 var(--accent)}
 .cycle__row .is-back h3,.cycle__row .is-back .cycle__n{color:var(--accent)}
 
+/* perguntas frequentes (GEO + SEO) */
+.faq{border-top:var(--rule)}
+.faq__list{display:grid;max-width:880px}
+.faq__item{border-top:var(--rule)}
+.faq__item:last-child{border-bottom:var(--rule)}
+.faq__summary{display:flex;justify-content:space-between;align-items:center;gap:var(--s2);padding:var(--s4) 0;cursor:pointer;list-style:none;font-size:var(--fs-xl);letter-spacing:-.02em}
+.faq__summary::-webkit-details-marker{display:none}
+.faq__summary h3{font-size:inherit;font-weight:inherit;text-transform:none;letter-spacing:inherit;line-height:inherit;display:inline}
+.faq__item[open] .faq__summary{color:var(--accent)}
+.faq__ico{position:relative;width:16px;height:16px;flex:none}
+.faq__ico::before,.faq__ico::after{content:"";position:absolute;left:0;top:50%;width:100%;height:1.5px;background:currentColor;transition:transform var(--dur) var(--ease)}
+.faq__ico::after{transform:rotate(90deg)}
+.faq__item[open] .faq__ico::after{transform:rotate(0)}
+.faq__body{padding:0 0 var(--s4);display:grid;gap:var(--s2);color:var(--ink-2);font-size:var(--fs-base);line-height:1.6}
+.faq__body p+p{margin-top:var(--s1)}
+.faq__body strong{color:var(--ink);font-weight:500}
+
 /* fechamento (Volvo): foto de estrada com formulário por cima */
 .contact{position:relative;padding:var(--section) 0;color:var(--white)}
 .contact__bg{position:absolute;inset:0}

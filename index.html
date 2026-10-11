@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Plataforma de frete em SP, PR e RS | TACLOG</title>
+<link rel="canonical" href="https://www.taclog.com.br/">
 <meta name="description" content="O TACLOG conecta embarcadores, motoristas autônomos e transportadoras por geolocalização em tempo real. Grátis na fase piloto. Menos caminhão parado, menos carga esperando.">
 <meta property="og:title" content="Plataforma de frete em SP, PR e RS | TACLOG">
 <meta property="og:description" content="O TACLOG conecta embarcadores, motoristas autônomos e transportadoras por geolocalização em tempo real. Grátis na fase piloto. Menos caminhão parado, menos carga esperando.">
@@ -19,7 +20,102 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"TACLOG","slogan":"A estrada conectada","description":"O TACLOG conecta embarcadores, motoristas autônomos e transportadoras por geolocalização em tempo real. Grátis na fase piloto. Menos caminhão parado, menos carga esperando.","logo":"img/logo.png","url":"https://taclog.com.br","email":"contato@taclog.com.br","telephone":"+5551920082019","areaServed":["SP","PR","RS"],"parentOrganization":{"@type":"Organization","name":"Vetix Tecnologia"},"sameAs":[]}</script>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://www.taclog.com.br/#software",
+    "name": "TACLOG",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.taclog.com.br",
+    "description": "Plataforma digital de frete por geolocalização que conecta embarcadores, motoristas autônomos e transportadoras.",
+    "disambiguatingDescription": "Plataforma de software desenvolvida pela Vetix Tecnologia. Não é uma transportadora.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BRL",
+      "description": "Gratuito na fase piloto"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.taclog.com.br/#vetix",
+      "name": "Vetix Tecnologia"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.taclog.com.br/#organization",
+    "name": "TACLOG",
+    "slogan": "A estrada conectada",
+    "description": "Plataforma digital de frete por geolocalização que conecta embarcadores, motoristas autônomos e transportadoras.",
+    "disambiguatingDescription": "Plataforma de software desenvolvida pela Vetix Tecnologia. Não é uma transportadora.",
+    "logo": "https://www.taclog.com.br/img/logo.png",
+    "url": "https://www.taclog.com.br",
+    "email": "contato@taclog.com.br",
+    "telephone": "+5551920082019",
+    "areaServed": [
+      "SP",
+      "PR",
+      "RS"
+    ],
+    "parentOrganization": {
+      "@type": "Organization",
+      "@id": "https://www.taclog.com.br/#vetix",
+      "name": "Vetix Tecnologia"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.taclog.com.br/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é o TACLOG?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O TACLOG é uma plataforma digital de frete desenvolvida pela Vetix Tecnologia. Liga quem tem carga a quem tem caminhão por geolocalização em tempo real, reduzindo caminhões parados e carga esperando."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O TACLOG é uma transportadora?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O TACLOG é uma plataforma de software desenvolvida pela Vetix Tecnologia. Quem transporta a carga é o motorista ou a transportadora cadastrada no sistema."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto custa usar o TACLOG na fase piloto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Na fase piloto, o TACLOG é gratuito (R$ 0) para embarcadores, motoristas autônomos e transportadoras."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona o match de frete por geolocalização?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O embarcador publica a carga com tipo, peso, origem e destino. O sistema cruza a carga com caminhões próximos por geolocalização em tempo real, agenda a coleta com dia e hora e acompanha a entrega até o destino. Ao fim da entrega, sugere frete de retorno."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como a transportadora usa o TACLOG?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A transportadora cadastra a frota inteira na plataforma. Cada caminhão passa a captar carga em qualquer região atendida."
+        }
+      }
+    ]
+  }
+]
+</script>
 </head>
 <body class="is-loading">
 <div class="loader" aria-hidden="true"><div class="loader__in"><img src="img/logo.png" alt="" width="124" height="133"><p class="loader__word"><span style="--i:0">T</span><span style="--i:1">A</span><span style="--i:2">C</span><span style="--i:3">L</span><span style="--i:4">O</span><span style="--i:5">G</span></p><p class="loader__tag">a estrada conectada</p></div><span class="loader__n">0</span><span class="loader__bar"></span></div>
@@ -29,7 +125,7 @@
   <p class="notice">Fase piloto: o TACLOG é gratuito para embarcadores, motoristas e transportadoras. <a href="#como-funciona">Saiba como funciona</a></p>
   <div class="wrap top__row">
     <a class="brand" href="#"><img src="img/logo.png" alt="" width="124" height="133"><span>TACLOG</span></a>
-    <nav aria-label="Principal"><a href="#como-funciona">Como funciona</a><a href="#cobertura">Cobertura</a><a href="#produto">O produto</a><a href="#contato">Contato</a></nav>
+    <nav aria-label="Principal"><a href="#como-funciona">Como funciona</a><a href="#cobertura">Cobertura</a><a href="#produto">O produto</a><a href="#faq">Dúvidas</a><a href="#contato">Contato</a></nav>
     <a class="btn btn--sm" href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Acessar a plataforma<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
   </div>
 </header>
@@ -110,6 +206,45 @@
   <ol class="cycle__row"><li class="rise" style="--d:0s"><span class="cycle__n">1</span><h3>Carga</h3><p>O embarcador publica a oferta com tipo, peso, origem e destino.</p></li><li class="rise" style="--d:0.08s"><span class="cycle__n">2</span><h3>Match</h3><p>O sistema cruza carga e caminhão por geolocalização e aproxima os dois.</p></li><li class="rise" style="--d:0.16s"><span class="cycle__n">3</span><h3>Coleta</h3><p>Coleta agendada com dia e hora, com aviso de antecedência.</p></li><li class="rise" style="--d:0.24s"><span class="cycle__n">4</span><h3>Entrega</h3><p>Rastreamento em tempo real até o destino.</p></li><li class="rise is-back" style="--d:0.32s"><span class="cycle__n">5</span><h3>Retorno</h3><p>Antes de rodar vazio, o motorista recebe ofertas de frete de retorno.</p></li></ol>
 </div></section>
 
+<section class="section faq" id="faq"><div class="wrap">
+  <div class="head">
+    <h2>Perguntas frequentes.</h2>
+    <p>Respostas diretas sobre o TACLOG e a fase piloto.</p>
+  </div>
+  <div class="faq__list">
+    <details class="faq__item" open>
+      <summary class="faq__summary"><h3>O que é o TACLOG?</h3><span class="faq__ico" aria-hidden="true"></span></summary>
+      <div class="faq__body">
+        <p>O TACLOG é uma plataforma digital de frete desenvolvida pela Vetix Tecnologia. Liga quem tem carga a quem tem caminhão por geolocalização em tempo real, reduzindo caminhões parados e carga esperando.</p>
+      </div>
+    </details>
+    <details class="faq__item">
+      <summary class="faq__summary"><h3>O TACLOG é uma transportadora?</h3><span class="faq__ico" aria-hidden="true"></span></summary>
+      <div class="faq__body">
+        <p>Não. O TACLOG é uma plataforma de software desenvolvida pela Vetix Tecnologia. Quem transporta a carga é o motorista ou a transportadora cadastrada no sistema.</p>
+      </div>
+    </details>
+    <details class="faq__item">
+      <summary class="faq__summary"><h3>Quanto custa usar o TACLOG na fase piloto?</h3><span class="faq__ico" aria-hidden="true"></span></summary>
+      <div class="faq__body">
+        <p>Na fase piloto, o TACLOG é gratuito (R$ 0) para embarcadores, motoristas autônomos e transportadoras.</p>
+      </div>
+    </details>
+    <details class="faq__item">
+      <summary class="faq__summary"><h3>Como funciona o match de frete por geolocalização?</h3><span class="faq__ico" aria-hidden="true"></span></summary>
+      <div class="faq__body">
+        <p>O embarcador publica a carga com tipo, peso, origem e destino. O sistema cruza a carga com caminhões próximos por geolocalização em tempo real, agenda a coleta com dia e hora e acompanha a entrega até o destino. Ao fim da entrega, sugere frete de retorno.</p>
+      </div>
+    </details>
+    <details class="faq__item">
+      <summary class="faq__summary"><h3>Como a transportadora usa o TACLOG?</h3><span class="faq__ico" aria-hidden="true"></span></summary>
+      <div class="faq__body">
+        <p>A transportadora cadastra a frota inteira na plataforma. Cada caminhão passa a captar carga em qualquer região atendida.</p>
+      </div>
+    </details>
+  </div>
+</div></section>
+
 <section class="contact" id="contato">
   <figure class="contact__bg" aria-hidden="true"><img src="img/cta.webp" alt="" width="2400" height="1350" loading="lazy"></figure>
   <div class="wrap contact__grid">
@@ -138,7 +273,7 @@
       <div class="actions"><a class="btn" href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Acessar a plataforma<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><a class="btn btn--ghost" href="https://wa.me/5551920082019?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20TACLOG%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">Chamar no WhatsApp<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div>
     </div>
     <div class="foot__cols">
-      <div><h3>Navegação</h3><ul><li><a href="#como-funciona">Como funciona</a></li><li><a href="#cobertura">Cobertura</a></li><li><a href="#produto">O produto</a></li><li><a href="#contato">Contato</a></li></ul></div>
+      <div><h3>Navegação</h3><ul><li><a href="#como-funciona">Como funciona</a></li><li><a href="#cobertura">Cobertura</a></li><li><a href="#produto">O produto</a></li><li><a href="#faq">Dúvidas frequentes</a></li><li><a href="#contato">Contato</a></li></ul></div>
       <div><h3>Plataforma</h3><ul><li><a href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Acessar a plataforma</a></li></ul></div><div><h3>Contato</h3><ul><li><a href="https://wa.me/5551920082019?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20TACLOG%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">WhatsApp (51) 92008-2019</a></li><li><a href="mailto:contato@taclog.com.br">contato@taclog.com.br</a></li></ul></div>
     </div>
   </div>

@@ -1,0 +1,28 @@
+# TACLOG
+
+> Plataforma digital de frete desenvolvida pela Vetix Tecnologia, que conecta embarcadores, motoristas autônomos (TAC) e transportadoras por geolocalização em tempo real.
+
+O TACLOG é uma plataforma de software desenvolvida pela Vetix Tecnologia. Não é uma transportadora.
+
+## Docs
+
+- [Início](https://www.taclog.com.br/): Visão geral da plataforma TACLOG, cobertura nos estados de SP, PR e RS, e formulário de inscrição para o programa piloto.
+- [Acesso à Plataforma](https://taclog-web.onrender.com): Painel web oficial para embarcadores publicarem cargas e transportadoras ou motoristas gerenciarem fretes.
+
+## Key Facts
+
+- Nome: TACLOG
+- Empresa desenvolvedora: Vetix Tecnologia
+- Natureza do negócio: Plataforma digital de frete / Software de logística (SaaS B2B)
+- Diferenciação: plataforma de software da Vetix Tecnologia, não uma transportadora
+- Cobertura inicial (piloto): São Paulo (SP), Paraná (PR) e Rio Grande do Sul (RS)
+- Modelo comercial: 100% gratuito (R$ 0) para participantes durante a fase piloto
+- Perfis atendidos: Embarcadores (empresas com carga), Motoristas Autônomos (TAC), Transportadoras (empresas com frota)
+- Recursos centrais: Match inteligente por geolocalização em tempo real, rastreamento de carga ao vivo, agendamento de coleta e sugestão de frete de retorno para redução de viagens vazias
+
+## Contact
+
+- Website: https://www.taclog.com.br
+- Plataforma: https://taclog-web.onrender.com
+- E-mail: contato@taclog.com.br
+- WhatsApp oficial: +55 (51) 92008-2019
