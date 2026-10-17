@@ -1,0 +1,28 @@
+/* TACLOG v2 — âncora Kodiak (kodiak.ai), aprovada 05/10/2026.
+   Branco limpo, UMA cor de destaque (o vermelho da Kodiak vira o azul do logo), títulos grandes em peso
+   normal e caixa-baixa com tracking negativo, foto real grande em toda seção, filetes pretos de 1px,
+   cantos retos. Sem mono, sem colchetes, sem fundo escuro de "tech". v1 guardada em v1/. */
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap");
+:root{
+  --sans:"General Sans","Helvetica Neue",Arial,sans-serif;   /* ≈ fonte da Kodiak: geométrica, 'a' de dois andares */
+  /* escala — medida na âncora: h1 86px/-4.3px, h2 50px/-1px, corpo 16px; aqui corpo 17px */
+  --fs-sm:15px; --fs-base:17px; --fs-lg:21px; --fs-xl:clamp(22px,1.9vw,28px);
+  --fs-h3:clamp(22px,1.9vw,28px); --fs-h2:clamp(34px,3.6vw,52px); --fs-h1:clamp(46px,6vw,88px);
+  --lh-h1:1.08; --lh-h2:1.1; --lh:1.5;
+  --track-h1:-.05em; --track-h2:-.02em; --track-h3:-.01em;
+  /* cor */
+  --white:#FFFFFF; --paper:#F6F4F1;            /* papel quente: painel de texto ao lado da foto (como a âncora) */
+  --ink:#0E0E0E; --ink-2:#5C5A57;              /* texto: 19:1 / 6,9:1 */
+  --line:#0E0E0E; --line-soft:#E4E1DC;         /* filete preto dos acordeões/abas; filete suave */
+  --accent:#1F74A6;                            /* azul do logo escurecido: faixa do topo, aba ativa, botão (texto branco 5,1:1) */
+  --accent-h:#105080;                          /* hover */
+  --logo:#3090C0;                              /* azul puro do logo: só traço da rota no mapa e detalhes não-texto */
+  /* espaço — âncora usa vazios enormes entre seções */
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s6:48px; --s8:64px; --s12:96px; --s16:128px;
+  --section:clamp(88px,11vw,176px); --wrap:1180px; --gutter:clamp(20px,3.5vw,48px);
+  /* forma */
+  --r:0; --rule:1px solid var(--line); --rule-soft:1px solid var(--line-soft);
+  /* movimento — sóbrio: troca de foto em fade, acordeão abrindo, seta deslizando */
+  --ease:cubic-bezier(.2,.7,.2,1); --dur:.25s; --dur-slow:.6s; --dur-route:2.4s;
+}
+@media (prefers-reduced-motion:reduce){:root{--dur:0s;--dur-slow:0s;--dur-route:0s}}
