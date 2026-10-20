@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plataforma de frete em SP, PR e RS | TACLOG</title>
+<link rel="canonical" href="https://www.taclog.com.br/">
+<meta name="description" content="O TACLOG conecta embarcadores, motoristas autônomos e transportadoras por geolocalização em tempo real. Grátis na fase piloto. Menos caminhão parado, menos carga esperando.">
+<meta property="og:title" content="Plataforma de frete em SP, PR e RS | TACLOG">
+<meta property="og:description" content="O TACLOG conecta embarcadores, motoristas autônomos e transportadoras por geolocalização em tempo real. Grátis na fase piloto. Menos caminhão parado, menos carga esperando.">
+<meta property="og:image" content="img/hero.webp">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+<link rel="icon" type="image/png" sizes="192x192" href="img/favicon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+<link rel="preload" as="image" href="img/hero.webp">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://www.taclog.com.br/#software",
+    "name": "TACLOG",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://www.taclog.com.br",
+    "description": "Plataforma digital de frete por geolocalização que conecta embarcadores, motoristas autônomos e transportadoras.",
+    "disambiguatingDescription": "Plataforma de software desenvolvida pela Vetix Tecnologia. Não é uma transportadora.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "BRL",
+      "description": "Gratuito na fase piloto"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://www.taclog.com.br/#vetix",
+      "name": "Vetix Tecnologia"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.taclog.com.br/#organization",
+    "name": "TACLOG",
+    "slogan": "A estrada conectada",
+    "description": "Plataforma digital de frete por geolocalização que conecta embarcadores, motoristas autônomos e transportadoras.",
+    "disambiguatingDescription": "Plataforma de software desenvolvida pela Vetix Tecnologia. Não é uma transportadora.",
+    "logo": "https://www.taclog.com.br/img/logo.png",
+    "url": "https://www.taclog.com.br",
+    "email": "contato@taclog.com.br",
+    "telephone": "+5551920082019",
+    "areaServed": [
+      "SP",
+      "PR",
+      "RS"
+    ],
+    "parentOrganization": {
+      "@type": "Organization",
+      "@id": "https://www.taclog.com.br/#vetix",
+      "name": "Vetix Tecnologia"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://www.taclog.com.br/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "O que é o TACLOG?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O TACLOG é uma plataforma digital de frete desenvolvida pela Vetix Tecnologia. Liga quem tem carga a quem tem caminhão por geolocalização em tempo real, reduzindo caminhões parados e carga esperando."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O TACLOG é uma transportadora?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Não. O TACLOG é uma plataforma de software desenvolvida pela Vetix Tecnologia. Quem transporta a carga é o motorista ou a transportadora cadastrada no sistema."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quanto custa usar o TACLOG na fase piloto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Na fase piloto, o TACLOG é gratuito (R$ 0) para embarcadores, motoristas autônomos e transportadoras."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona o match de frete por geolocalização?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O embarcador publica a carga com tipo, peso, origem e destino. O sistema cruza a carga com caminhões próximos por geolocalização em tempo real, agenda a coleta com dia e hora e acompanha a entrega até o destino. Ao fim da entrega, sugere frete de retorno."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como a transportadora usa o TACLOG?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A transportadora cadastra a frota inteira na plataforma. Cada caminhão passa a captar carga em qualquer região atendida."
+        }
+      }
+    ]
+  }
+]
+</script>
+</head>
+<body class="is-loading">
+<div class="loader" aria-hidden="true"><div class="loader__in"><img src="img/logo.png" alt="" width="124" height="133"><p class="loader__word"><span style="--i:0">T</span><span style="--i:1">A</span><span style="--i:2">C</span><span style="--i:3">L</span><span style="--i:4">O</span><span style="--i:5">G</span></p><p class="loader__tag">a estrada conectada</p></div><span class="loader__n">0</span><span class="loader__bar"></span></div>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+
+<header class="top">
+  <p class="notice">Fase piloto: o TACLOG é gratuito para embarcadores, motoristas e transportadoras. <a href="#como-funciona">Saiba como funciona</a></p>
+  <div class="wrap top__row">
+    <a class="brand" href="#"><img src="img/logo.png" alt="" width="124" height="133"><span>TACLOG</span></a>
+    <nav aria-label="Principal"><a href="#como-funciona">Como funciona</a><a href="#cobertura">Cobertura</a><a href="#produto">O produto</a><a href="#faq">Dúvidas</a><a href="#contato">Contato</a></nav>
+    <a class="btn btn--sm" href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Acessar a plataforma<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+<div class="hero__top">
+  <figure class="hero__bg"><img src="img/hero.webp" alt="Vista aérea de uma carreta rodando numa rodovia ao entardecer" width="2400" height="1350" fetchpriority="high"></figure>
+  <div class="wrap hero__copy">
+  <h1>A estrada conectada.</h1>
+  <p class="hero__lead">O TACLOG liga quem tem carga a quem tem caminhão por geolocalização em tempo real. O embarcador publica a carga, o sistema aproxima o motorista certo — menos caminhão parado, menos carga esperando.</p>
+  <div class="actions"><a class="btn" href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Acessar a plataforma<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><a class="btn btn--light" href="https://wa.me/5551920082019?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20TACLOG%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">Falar no WhatsApp<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div>
+  </div>
+</div>
+  <figure class="hero__img"><video src="img/hero.mp4" poster="img/hero-poster.webp" autoplay muted loop playsinline preload="auto" aria-label="Vista aérea de uma carreta rodando numa rodovia ao entardecer"></video></figure>
+</section>
+
+<section class="stats"><div class="wrap">
+  <h2 class="stats__title">Por dentro do TACLOG.</h2>
+  <ul class="stats__row"><li class="rise" style="--d:0s"><strong>3</strong><span>lados: embarcador, motorista e transportadora</span></li><li class="rise" style="--d:0.08s"><strong>100%</strong><span>match por geolocalização, em tempo real</span></li><li class="rise" style="--d:0.16s"><strong>SP · PR · RS</strong><span>cobertura inicial do piloto</span></li><li class="rise" style="--d:0.24s"><strong>R$ 0</strong><span>grátis para todos na fase piloto</span></li></ul>
+</div></section>
+
+<section class="section how" id="como-funciona"><div class="wrap">
+  <div class="head "><h2>Um painel, três jeitos de rodar.</h2><p>Escolha o seu perfil. A foto ao lado mostra a operação de cada um — e o mapa, logo abaixo, desenha a rota real.</p></div>
+  <div class="how__grid">
+    <div class="acc"><details name="perfil" data-i="0" open>
+      <summary><span>Embarcador</span><span class="acc__ico" aria-hidden="true"></span></summary>
+      <div class="acc__body">
+        <h3>Quem tem carga</h3><p>Cadastre a carga e deixe o sistema encontrar o caminhão certo — sem ligar para uma lista de transportadoras.</p>
+        <a class="link" href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Publicar uma carga<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      </div>
+    </details><details name="perfil" data-i="1">
+      <summary><span>Motorista autônomo (TAC)</span><span class="acc__ico" aria-hidden="true"></span></summary>
+      <div class="acc__body">
+        <h3>Quem tem caminhão</h3><p>Receba ofertas perto de onde você está, rode com o valor cheio no piloto e reduza a rota vazia com o frete de retorno.</p>
+        <a class="link" href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Cadastrar como motorista<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      </div>
+    </details><details name="perfil" data-i="2">
+      <summary><span>Transportadora</span><span class="acc__ico" aria-hidden="true"></span></summary>
+      <div class="acc__body">
+        <h3>Quem tem frota</h3><p>A transportadora é parceira, não concorrente: cada caminhão vira um agente comercial e pode captar carga em qualquer região.</p>
+        <a class="link" href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Cadastrar a frota<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      </div>
+    </details></div>
+    <div class="how__media">
+      <figure class="shot is-on" data-i="0"><img src="img/perfil-embarcador.webp" alt="Empilhadeira ao lado de uma carreta pronta para carregar" width="1200" height="1500" loading="lazy">
+      </figure><figure class="shot" data-i="1"><img src="img/perfil-motorista.webp" alt="Motorista dirigindo um caminhão branco" width="1200" height="1500" loading="lazy">
+      </figure><figure class="shot" data-i="2"><img src="img/perfil-transportadora.webp" alt="Frota de caminhões estacionada no pátio" width="1200" height="1500" loading="lazy">
+      </figure>
+    </div>
+  </div>
+</div></section>
+
+<section class="section coverage" id="cobertura"><div class="wrap">
+  <div class="head "><h2>Onde o piloto já roda.</h2><p>A cobertura inicial é São Paulo, Paraná e Rio Grande do Sul. O mapa é real: as linhas seguem a rodovia de cada operação, calculadas por rota entre as cidades.</p></div>
+  <div class="sides"><div class="side rise"><h3>Quem tem carga</h3><p>Publica a oferta e paga menos: o sistema encontra o caminhão que já está perto.</p></div><div class="side rise"><h3>Quem tem caminhão</h3><p>Recebe a oferta por perto e, no piloto, fica com o valor cheio do frete.</p></div></div>
+  <div class="map">
+    <div class="map__canvas" id="mapa" role="img" aria-label="Mapa de São Paulo, Paraná e Rio Grande do Sul com as rotas reais do TACLOG"></div>
+    <script type="application/json" id="rotas">[{"km":1128,"line":[[-30.0347,-51.2177],[-29.9715,-51.1939],[-29.8911,-50.7164],[-29.8801,-50.2617],[-28.8443,-49.4315],[-28.6662,-49.1149],[-28.4783,-49.0328],[-28.44,-48.8125],[-28.3448,-48.7342],[-27.0491,-48.5978],[-26.8691,-48.7299],[-26.5221,-48.7168],[-26.2331,-48.9165],[-26.0136,-48.8621],[-25.8593,-48.9381],[-25.8209,-49.128],[-25.5718,-49.1803],[-25.1156,-48.8529],[-24.9238,-48.2623],[-24.7805,-48.2037],[-24.6468,-47.9211],[-24.4234,-47.7785],[-24.2629,-47.3796],[-23.9762,-47.1434],[-23.9292,-46.9959],[-23.5945,-46.8103],[-23.5501,-46.6329]]},{"km":404,"line":[[-23.5501,-46.6329],[-23.5906,-46.8114],[-23.7242,-46.8927],[-23.8419,-46.9318],[-23.9293,-46.9964],[-23.9364,-47.0806],[-23.976,-47.1434],[-24.0274,-47.1742],[-24.0745,-47.25],[-24.144,-47.2726],[-24.1524,-47.3218],[-24.1851,-47.359],[-24.2626,-47.3795],[-24.3209,-47.5355],[-24.3326,-47.6395],[-24.4233,-47.7788],[-24.5028,-47.8472],[-24.5772,-47.8845],[-24.6031,-47.8768],[-24.6467,-47.9213],[-24.6551,-47.9636],[-24.7221,-48.0439],[-24.7456,-48.1472],[-24.7847,-48.1805],[-24.7771,-48.2111],[-24.8722,-48.2164],[-24.9236,-48.2624],[-24.9719,-48.3512],[-24.9723,-48.4034],[-24.9469,-48.4264],[-24.9709,-48.5003],[-25.0182,-48.5106],[-25.0873,-48.6048],[-25.1063,-48.8484],[-25.3039,-48.9444],[-25.3108,-49.0143],[-25.3471,-49.0477],[-25.3887,-49.2059],[-25.4176,-49.224],[-25.4284,-49.2732]]},{"km":536,"line":[[-23.5501,-46.6329],[-23.518,-46.6383],[-23.5075,-46.6949],[-23.5247,-46.7526],[-23.5046,-46.862],[-23.5189,-46.954],[-23.4378,-47.0688],[-23.4227,-47.2443],[-23.2597,-47.8538],[-23.2296,-48.1651],[-23.1961,-48.2231],[-23.2004,-48.26],[-23.1332,-48.4621],[-23.0755,-48.5254],[-22.9553,-48.8219],[-22.9102,-49.0943],[-22.8486,-49.1827],[-22.8065,-49.3471],[-22.7305,-49.462],[-22.8623,-49.5877],[-22.9268,-49.8257],[-22.9219,-49.9012],[-23.0044,-49.911],[-23.0012,-49.9897],[-23.0433,-50.105],[-23.0285,-50.2101],[-23.1211,-50.3234],[-23.1107,-50.3348],[-23.1392,-50.3836],[-23.1276,-50.4602],[-23.1558,-50.5076],[-23.1443,-50.5892],[-23.2342,-50.6804],[-23.2791,-50.8403],[-23.2853,-50.946],[-23.2571,-50.9825],[-23.2497,-51.0487],[-23.2654,-51.0913],[-23.2924,-51.0965],[-23.3045,-51.1628]]}]</script>
+    <div class="map__tabs" role="group" aria-label="Rotas"><button type="button" data-i="0" aria-pressed="true"><strong>Porto Alegre, RS → São Paulo, SP</strong><span>Embarcador · 1.128 km</span></button><button type="button" data-i="1" aria-pressed="false"><strong>São Paulo, SP → Curitiba, PR</strong><span>Motorista autônomo (TAC) · 404 km</span></button><button type="button" data-i="2" aria-pressed="false"><strong>São Paulo, SP → Londrina, PR</strong><span>Transportadora · 536 km</span></button></div>
+  </div>
+  <p class="map__note">Trajetos reais por rodovia (OSRM) entre Porto Alegre, Curitiba e São Paulo.</p>
+</div></section>
+
+<section class="section product" id="produto"><div class="wrap">
+  <div class="head "><h2>Não é promessa: é plataforma.</h2><p>O portal do TACLOG roda no navegador. O embarcador publica a carga e o motorista recebe a oferta — tudo pelo mesmo sistema.</p></div>
+  <div class="product__grid">
+    <figure class="screen rise"><div class="screen__bar" aria-hidden="true"><i></i><i></i><i></i><span>taclog-web.onrender.com</span></div><img src="img/produto.webp" alt="Tela de acesso do portal TACLOG, com os campos de CPF e senha" width="1400" height="860" loading="lazy"><figcaption>Tela de acesso do portal do TACLOG (taclog-web.onrender.com).</figcaption></figure>
+    <div class="panel">
+      <ul><li>Match por geolocalização em tempo real</li><li>Rastreamento da carga ao vivo</li><li>Agendamento de coleta com dia, hora e antecedência</li><li>Filtros de veículo, como baú refrigerado com termostato</li><li>Frete de retorno sugerido ao fim da entrega</li><li>Controle de frota, carreta e acoplamento</li></ul>
+      <a class="btn" href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Entrar na plataforma<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+    </div>
+  </div>
+</div></section>
+
+<section class="section cycle"><div class="wrap">
+  <div class="head "><h2>Da carga parada ao caminhão que volta cheio.</h2></div>
+  <ol class="cycle__row"><li class="rise" style="--d:0s"><span class="cycle__n">1</span><h3>Carga</h3><p>O embarcador publica a oferta com tipo, peso, origem e destino.</p></li><li class="rise" style="--d:0.08s"><span class="cycle__n">2</span><h3>Match</h3><p>O sistema cruza carga e caminhão por geolocalização e aproxima os dois.</p></li><li class="rise" style="--d:0.16s"><span class="cycle__n">3</span><h3>Coleta</h3><p>Coleta agendada com dia e hora, com aviso de antecedência.</p></li><li class="rise" style="--d:0.24s"><span class="cycle__n">4</span><h3>Entrega</h3><p>Rastreamento em tempo real até o destino.</p></li><li class="rise is-back" style="--d:0.32s"><span class="cycle__n">5</span><h3>Retorno</h3><p>Antes de rodar vazio, o motorista recebe ofertas de frete de retorno.</p></li></ol>
+</div></section>
+
+<section class="section faq" id="faq"><div class="wrap">
+  <div class="head">
+    <h2>Perguntas frequentes.</h2>
+    <p>Respostas diretas sobre o TACLOG e a fase piloto.</p>
+  </div>
+  <div class="faq__list">
+    <details class="faq__item" open>
+      <summary class="faq__summary"><h3>O que é o TACLOG?</h3><span class="faq__ico" aria-hidden="true"></span></summary>
+      <div class="faq__body">
+        <p>O TACLOG é uma plataforma digital de frete desenvolvida pela Vetix Tecnologia. Liga quem tem carga a quem tem caminhão por geolocalização em tempo real, reduzindo caminhões parados e carga esperando.</p>
+      </div>
+    </details>
+    <details class="faq__item">
+      <summary class="faq__summary"><h3>O TACLOG é uma transportadora?</h3><span class="faq__ico" aria-hidden="true"></span></summary>
+      <div class="faq__body">
+        <p>Não. O TACLOG é uma plataforma de software desenvolvida pela Vetix Tecnologia. Quem transporta a carga é o motorista ou a transportadora cadastrada no sistema.</p>
+      </div>
+    </details>
+    <details class="faq__item">
+      <summary class="faq__summary"><h3>Quanto custa usar o TACLOG na fase piloto?</h3><span class="faq__ico" aria-hidden="true"></span></summary>
+      <div class="faq__body">
+        <p>Na fase piloto, o TACLOG é gratuito (R$ 0) para embarcadores, motoristas autônomos e transportadoras.</p>
+      </div>
+    </details>
+    <details class="faq__item">
+      <summary class="faq__summary"><h3>Como funciona o match de frete por geolocalização?</h3><span class="faq__ico" aria-hidden="true"></span></summary>
+      <div class="faq__body">
+        <p>O embarcador publica a carga com tipo, peso, origem e destino. O sistema cruza a carga com caminhões próximos por geolocalização em tempo real, agenda a coleta com dia e hora e acompanha a entrega até o destino. Ao fim da entrega, sugere frete de retorno.</p>
+      </div>
+    </details>
+    <details class="faq__item">
+      <summary class="faq__summary"><h3>Como a transportadora usa o TACLOG?</h3><span class="faq__ico" aria-hidden="true"></span></summary>
+      <div class="faq__body">
+        <p>A transportadora cadastra a frota inteira na plataforma. Cada caminhão passa a captar carga em qualquer região atendida.</p>
+      </div>
+    </details>
+  </div>
+</div></section>
+
+<section class="contact" id="contato">
+  <figure class="contact__bg" aria-hidden="true"><img src="img/cta.webp" alt="" width="2400" height="1350" loading="lazy"></figure>
+  <div class="wrap contact__grid">
+    <div class="contact__copy">
+      <h2>Vamos conectar a sua carga.</h2><p>Acesse a plataforma ou fale com a gente. Na fase piloto, o TACLOG é gratuito para embarcadores, motoristas e transportadoras.</p>
+      <div class="actions"><a class="btn btn--light" href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Acessar a plataforma<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div>
+    </div>
+    <form class="form" action="https://api.web3forms.com/submit" method="POST" data-ok="Mensagem enviada. Falamos com você em breve." data-err="Não deu para enviar agora. Tente pelo WhatsApp.">
+      <h3>Fale com o TACLOG</h3>
+      <input type="hidden" name="access_key" value="3496d842-05c7-4611-a8dc-9e4a2049cdba">
+      <input type="hidden" name="subject" value="Novo contato pelo site TACLOG">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form__grid"><div class="field"><label for="f-name">Nome</label><input id="f-name" name="name" type="text" required autocomplete="name"></div><div class="field"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" required autocomplete="email"></div><div class="field"><label for="f-phone">Telefone / WhatsApp <small>(opcional)</small></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div><div class="field field--wide"><label for="f-perfil">Você é</label><select id="f-perfil" name="perfil" required><option value="">Selecione</option><option>Embarcador</option><option>Motorista autônomo (TAC)</option><option>Transportadora</option><option>Outro</option></select></div><div class="field field--wide"><label for="f-message">Mensagem</label><textarea id="f-message" name="message" rows="3" required></textarea></div></div>
+      <button class="btn" type="submit">Enviar mensagem<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <p class="form__msg" role="status" aria-live="polite"></p>
+      <p class="form__alt"><a href="https://wa.me/5551920082019?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20TACLOG%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">WhatsApp (51) 92008-2019</a> · <a href="mailto:contato@taclog.com.br">contato@taclog.com.br</a></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <div class="foot__top">
+    <div class="foot__cta">
+      <p class="foot__title">Vamos conectar a sua carga.</p>
+      <div class="actions"><a class="btn" href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Acessar a plataforma<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a><a class="btn btn--ghost" href="https://wa.me/5551920082019?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20TACLOG%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">Chamar no WhatsApp<svg class="arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></div>
+    </div>
+    <div class="foot__cols">
+      <div><h3>Navegação</h3><ul><li><a href="#como-funciona">Como funciona</a></li><li><a href="#cobertura">Cobertura</a></li><li><a href="#produto">O produto</a></li><li><a href="#faq">Dúvidas frequentes</a></li><li><a href="#contato">Contato</a></li></ul></div>
+      <div><h3>Plataforma</h3><ul><li><a href="https://taclog-web.onrender.com" target="_blank" rel="noopener">Acessar a plataforma</a></li></ul></div><div><h3>Contato</h3><ul><li><a href="https://wa.me/5551920082019?text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20TACLOG%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noopener">WhatsApp (51) 92008-2019</a></li><li><a href="mailto:contato@taclog.com.br">contato@taclog.com.br</a></li></ul></div>
+    </div>
+  </div>
+  <div class="foot__bottom">
+    <a class="brand" href="#"><img src="img/logo.png" alt="" width="124" height="133"><span>TACLOG</span></a>
+    <p>Plataforma de frete por geolocalização que liga embarcadores, motoristas e transportadoras.</p>
+    <p class="foot__legal">© 2026 TACLOG — um produto Vetix Tecnologia. Plataforma em fase piloto (MVP em campo). Cobertura inicial: SP · PR · RS.</p>
+    <a class="foot__up" href="#">Voltar ao topo ↑</a>
+  </div>
+</div></footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin defer></script>
+<script src="main.js?v=7" defer></script>
+</body>
+</html>
